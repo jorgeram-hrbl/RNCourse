@@ -1,0 +1,12 @@
+{
+  "files.exclude": {
+    ".buckconfig": true,
+    ".bundle": true,
+    ".gitignore": true,
+    ".node-version": true,
+    ".ruby-version": true,
+    "android": true,
+    "ios": true,
+    "node_modules": true
+  }
+}
