@@ -10,16 +10,19 @@ import {
 
 export interface CalcButtonProps {
   title: string;
-  onPress?: () => void;
+  onPress?: (title: string) => void;
+  disabled?: boolean;
   style?: StyleProp<ViewStyle>;
   titleStyle?: StyleProp<TextStyle>;
 }
 
 const CalcButton = (props: CalcButtonProps) => {
+  const onPress = () => props.onPress && props.onPress(props.title);
   return (
     <TouchableOpacity
       style={[styles.container, props.style]}
-      onPress={props.onPress}>
+      onPress={onPress}
+      disabled={props.disabled}>
       <Text style={[styles.title, props.titleStyle]}>{props.title}</Text>
     </TouchableOpacity>
   );
@@ -27,7 +30,8 @@ const CalcButton = (props: CalcButtonProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    padding: 20,
+    backgroundColor: 'rgb(50, 50, 50)',
+    aspectRatio: 0.7,
     borderWidth: 1,
     borderColor: 'white',
     alignItems: 'center',
@@ -36,8 +40,8 @@ const styles = StyleSheet.create({
   },
   title: {
     fontWeight: 'bold',
-    fontSize: 35,
-    color: 'black',
+    fontSize: 20,
+    color: 'white',
   },
 });
 
