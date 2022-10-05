@@ -39,12 +39,12 @@ const App = () => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'gray',
+    backgroundColor: '#505050',
     flex: 1,
   },
   formContainer: {
     marginTop: 40,
-    backgroundColor: 'lightgrey',
+    backgroundColor: 'dimgray',
     borderWidth: 1,
     borderColor: 'white',
     marginHorizontal: 20,
@@ -52,13 +52,15 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingHorizontal: 40,
     paddingBottom: 50,
-    borderRadius: 5,
+    borderRadius: 10,
   },
   textInput: {
+    color: 'white',
+    fontSize: 16,
     marginTop: 20,
     padding: 5,
-    borderBottomColor: 'black',
-    borderBottomWidth: 2,
+    borderBottomColor: 'darkgray',
+    borderBottomWidth: 1,
   },
   buttonsContainer: {
     marginHorizontal: 20,

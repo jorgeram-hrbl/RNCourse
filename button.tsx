@@ -27,7 +27,7 @@ const Button = (props: ButtonProps) => {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: 'lightgreen',
+    backgroundColor: 'white',
     alignItems: 'center',
     paddingVertical: 10,
     paddingHorizontal: 20,
