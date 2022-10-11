@@ -1,4 +1,4 @@
-import React, {useState} from 'react';
+import React, {useCallback, useEffect, useMemo, useState} from 'react';
 import {
   SafeAreaView,
   StatusBar,
@@ -19,7 +19,7 @@ const App = () => {
   const [errorMsg, setErrorMsg] = useState('');
   const [errorInp, setErrorInp] = useState<ErrorInputs | undefined>();
 
-  const onValidar = () => {
+  const onValidar = useCallback(() => {
     if (name.length < 3) {
       setErrorMsg('Invalid Name');
       setErrorInp('name');
@@ -33,13 +33,21 @@ const App = () => {
       setErrorMsg('');
       setErrorInp(undefined);
     }
-  };
+  }, [name, email, phone]);
 
   const onLimpiar = () => {
     setName('');
     setEmail('');
     setPhone('');
+    setErrorMsg('');
+    setErrorInp(undefined);
   };
+
+  useEffect(() => {
+    if (name.length > 0) {
+      onValidar();
+    }
+  }, [name, email, phone, onValidar]);
 
   return (
     <SafeAreaView style={styles.container}>
