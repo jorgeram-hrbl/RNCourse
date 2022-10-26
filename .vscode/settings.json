@@ -7,7 +7,6 @@
     ".ruby-version": true,
     ".vscode": true,
     ".watchmanconfig": true,
-    "android": true,
     "ios": true,
     "node_modules": true
   }
